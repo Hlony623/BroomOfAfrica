@@ -833,6 +833,11 @@ span{
         width: 100%;
     }
 
+    .services-box-1 img{
+        width: 100%;
+        height: 60%;
+    }
+
     .footer{
         flex-direction: column-reverse;
     }
