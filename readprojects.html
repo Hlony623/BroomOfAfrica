@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Broom of Africa</title>
+
+    <!-- box Icons -->
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+
+    <!-- custom css -->
+     <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+
+<!-- Header Design -->
+     <header class="header">
+        <a href="#home" class="logo"><img src="Images/logo.jpeg" width="120%" height="90px"></a>
+
+        <i class='bx bx-menu' id="menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="index.html" class="active"></i>Home</a>
+            <a href="index.html">About</a>
+            <a href="index.html">Services</a>
+            <a href="index.html">Portfolio</a>
+            <a href="index.html">Contact</a>
+        </nav>
+        <!--<div class="search-box">
+            <input class="search-txt" type="text" name="" placeholder="Type to search">
+            <a class="search-btn" href="#"><i class="fas fa-search"></i></a>
+        </div>-->
+     </header>
+    <br>
+    </br>
+
+    <br>
+</br>
+
+<br>
+
+</br>
+
+<br>
+
+</br>
+
+<br>
+
+</br>
+<section class="services-1" id="services">
+    <div class="services-container-1">
+        <div class="services-box-1">
+            <!--<i class='bx bx-bar-chart-alt'></i>-->
+            <h3><span>Cleaning Services</span></h3>
+            <br>
+            <img src="Images/8.jpeg" alt="Images" width="100%" height="200px">
+            <br>
+        </br>
+            <p>Currently working a project of Cleaning Services of 12 Health Centres in Quthing, 
+               Qacha snek and Thaba Tseka district under Lesotho Millennium Development Agency.
+                <br>
+            </br>
+            <span>AREAS TO BE CLEANED:</span>
+            <br>
+        </br>
+                <p><span>1.</span> Waiting areas</p>
+                <p><span>2.</span> Consulting rooms</p> 
+                <p><span>3.</span> Counselling rooms</p>
+                <p><span>4.</span> Delivery rooms TB Shelter</p>
+                <p><span>5.</span> Observation rooms</p>
+                <p><span>6.</span> Pharmacy and Pharmacy store</p> 
+                <p><span>7.</span> Multipurpose hall</p>
+                <p><span>8.</span> Waiting mothers</p>
+                <p><span>9.</span> Ventilated Improve Pit latrines Toilets and Ablutions Passages</p>
+
+            <br>
+        </br>    
+
+            <img src="Images/6.jpeg" alt="Images" width="100%" height="200px">
+            <br>
+        </br>
+        
+        <p><span>DAILY CLEANING ACTIVITIES:</span></p>
+            <br>
+                <p><span>1.</span> Sweep and wet mop all floors</p>
+                <p><span>2.</span> Dust tables, chairs and cabinets</p> 
+                <p><span>3.</span> Disinfect all regularly touched areas: door handles</p>
+                <p><span>4.</span> Clean toilets</p>
+                <p><span>5.</span> Change refuse bags</p>
+            <br>
+        </br>
+
+            <img src="Images/4.jpeg" alt="Images" width="100%" height="200px">
+            <br>
+        </br>
+
+        <p><span>WEEKLY CLEANING ACTIVITIES:</span></p>
+            <br>
+                <p><span>1.</span> Floor stripping</p>
+                <p><span>2.</span> Applying polish</p> 
+                <p><span>3.</span> Clean windows</p>
+                <p><span>4.</span> Clean toilets</p>
+                <p><span>5.</span> Clean walls</p>
+            <br>
+        </br>
+
+            </p>
+        </div>
+    </div>
+</section>
+
+    <script>
+                /*================================= Toggle Icon navbar =================================*/
+        let menuIcon = document.querySelector('#menu-icon');
+        let navbar = document.querySelector('.navbar');
+
+        menuIcon.onclick = () => {
+            menuIcon.classList.toggle('bx-x');
+            navbar.classList.toggle('active');
+        };
+
+
+
+        /*================================= Scroll Section Active Link =================================*/
+        let sections = document.querySelectorAll('section');
+        let navLinks = document.querySelectorAll('header nav a');
+
+        window.onscroll = () => {
+            sections.forEach(sec => {
+                let top = window.scrollY;
+                let offset = sec.offsetTop - 150;
+                let height = sec.offsetHeight;
+                let id = sec.getAttribute('id');
+
+                if(top >= offset && top < offset + height) {
+                    navLinks.forEach(links => {
+                        links.classList.remove('active');
+                        document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+                    });
+                }
+            });
+
+            /*================================= Sticky Navbar =================================*/
+            let header = document.querySelector('header');
+
+            header.classList.toggle('sticky', window.scrollY > 100);
+
+            /*================================= Remove Toggle Icon and navbar When click navbar lick (scroll) =================================*/
+            menuIcon.classList.remove('bx-x');
+            navbar.classList.remove('active');
+        };
+
+        /*================================= Scroll Reveal =================================*/
+        scrollReveal({
+            reset: true,
+            distance: '80px',
+            duration: 2000,
+            delay: 200
+        });
+
+        scrollReveal().reveal('.home-content, .heading',{origin: 'top'});
+        scrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form',{origin: 
+        'bottom'});
+        scrollReveal().reveal('.home-content h1, .about-img',{origin: 'left'});
+        scrollReveal().reveal('.home-content p, .about-content',{origin: 'right'});
+
+        /*================================= Typed JS =================================*/
+        const typed = new Typed('.multiple-text', {
+            strings: ['Frontend Developer', 'Backend Developer', 'Network Installer', 'Music Producer'],
+            typeSpeed: 100,
+            backSpeed: 100,
+            backDelay: 1000,
+            loop: true
+        });
+
+    </script>
+    
+</body>
+</html>

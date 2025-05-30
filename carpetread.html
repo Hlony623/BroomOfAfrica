@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Broom of Africa</title>
+
+    <!-- box Icons -->
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+
+    <!-- custom css -->
+     <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+
+    <!-- Header Design -->
+     <header class="header">
+        <a href="#home" class="logo"><img src="Images/logo.jpeg" width="120%" height="90px"></a>
+
+        <i class='bx bx-menu' id="menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="index.html" class="active"></i>Home</a>
+            <a href="index.html">About</a>
+            <a href="index.html">Services</a>
+            <a href="index.html">Portfolio</a>
+            <a href="index.html">Contact</a>
+        </nav>
+        <!--<div class="search-box">
+            <input class="search-txt" type="text" name="" placeholder="Type to search">
+            <a class="search-btn" href="#"><i class="fas fa-search"></i></a>
+        </div>-->
+     </header>
+    <br>
+    </br>
+
+    <br>
+</br>
+
+<br>
+
+</br>
+
+<br>
+
+</br>
+
+<br>
+
+</br>
+
+<br>
+
+</br>
+<section class="services-1" id="services">
+
+    <div class="services-container-1">
+        <div class="services-box-1">
+            <!--<i class='bx bx-bar-chart-alt'></i>-->
+            <h3><span>Carpet and Upholstery Cleaning</span></h3>
+            <br>
+            <img src="Images/11.jpeg" alt="Images" width="90%" height="230px">
+            <br>
+        </br>
+            <p>You invested heavily in your carpeting; 
+                it only makes sense to ensure it looks best for as long as possible, 
+                with proper maintenance techniques, you can add longevity to your carpet. 
+                Our cleaning technicians are highly trained in leading industry standards 
+                and employ top of the line cleaning practices. 
+                <br>
+            </br>We can help you in keeping your carpet looking and feeling fresh. Broom of Africa equipment, methods 
+                and products are all chosen to provide a safe, effective and environmentally 
+                friendly cleaning experience every time. Like your carpets, upholstery is an 
+                investment on its own in anyones home. Sofas and fabric chairs can all be professionally
+                cleaned. With the use of our professional equipment, the right cleaning agent and understanding
+                for numerous materials and fabrics, we can add many years to your favorite recliner.
+            </p>
+        </div>
+    </div>
+</section>
+    
+    <script>
+                /*================================= Toggle Icon navbar =================================*/
+        let menuIcon = document.querySelector('#menu-icon');
+        let navbar = document.querySelector('.navbar');
+
+        menuIcon.onclick = () => {
+            menuIcon.classList.toggle('bx-x');
+            navbar.classList.toggle('active');
+        };
+
+
+
+        /*================================= Scroll Section Active Link =================================*/
+        let sections = document.querySelectorAll('section');
+        let navLinks = document.querySelectorAll('header nav a');
+
+        window.onscroll = () => {
+            sections.forEach(sec => {
+                let top = window.scrollY;
+                let offset = sec.offsetTop - 150;
+                let height = sec.offsetHeight;
+                let id = sec.getAttribute('id');
+
+                if(top >= offset && top < offset + height) {
+                    navLinks.forEach(links => {
+                        links.classList.remove('active');
+                        document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+                    });
+                }
+            });
+
+            /*================================= Sticky Navbar =================================*/
+            let header = document.querySelector('header');
+
+            header.classList.toggle('sticky', window.scrollY > 100);
+
+            /*================================= Remove Toggle Icon and navbar When click navbar lick (scroll) =================================*/
+            menuIcon.classList.remove('bx-x');
+            navbar.classList.remove('active');
+        };
+
+        /*================================= Scroll Reveal =================================*/
+        scrollReveal({
+            reset: true,
+            distance: '80px',
+            duration: 2000,
+            delay: 200
+        });
+
+        scrollReveal().reveal('.home-content, .heading',{origin: 'top'});
+        scrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form',{origin: 
+        'bottom'});
+        scrollReveal().reveal('.home-content h1, .about-img',{origin: 'left'});
+        scrollReveal().reveal('.home-content p, .about-content',{origin: 'right'});
+
+        /*================================= Typed JS =================================*/
+        const typed = new Typed('.multiple-text', {
+            strings: ['Frontend Developer', 'Backend Developer', 'Network Installer', 'Music Producer'],
+            typeSpeed: 100,
+            backSpeed: 100,
+            backDelay: 1000,
+            loop: true
+        });
+
+    </script>
+</body>
+</html>

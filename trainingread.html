@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Broom of Africa</title>
+
+    <!-- box Icons -->
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+
+    <!-- custom css -->
+     <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+
+<!-- Header Design -->
+     <header class="header">
+        <a href="#home" class="logo"><img src="Images/logo.jpeg" width="120%" height="90px"></a>
+
+        <i class='bx bx-menu' id="menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="index.html" class="active"></i>Home</a>
+            <a href="index.html">About</a>
+            <a href="index.html">Services</a>
+            <a href="index.html">Portfolio</a>
+            <a href="index.html">Contact</a>
+        </nav>
+        <!--<div class="search-box">
+            <input class="search-txt" type="text" name="" placeholder="Type to search">
+            <a class="search-btn" href="#"><i class="fas fa-search"></i></a>
+        </div>-->
+     </header>
+    <br>
+    </br>
+
+    <br>
+</br>
+
+<br>
+
+</br>
+
+<br>
+
+</br>
+
+<br>
+
+</br>
+
+<br>
+
+</br>
+<section class="services-1" id="services">
+    <div class="services-container-1">
+        <div class="services-box-1">
+            <!--<i class='bx bx-bar-chart-alt'></i>-->
+            <h3><span>EMPLOYMENT TRAINING PROGRAMME</span></h3>
+            <br>
+            <img src="Images/13.jpeg" alt="Images" width="50%" height="200px">
+            <br>
+        </br>
+            <p>All Broom of Africa staff is trained in the relevant aspects of cleaning duties required of them. 
+                This comes in four stages.  
+                <br>
+            </br>
+                <p>1. <span>Induction training</span> - A full health and safety talk explaining the potential hazards of cleaning equipment 
+                and materials and an explanation of how these hazards can be found within every day procedures. 
+                In addition, we undertake a demonstration of personal protective clothing. 
+                Broom of Africa employees are trained accordingly. Basic electrical equipment (vacuum cleaner)
+                is made familiar to cleaners with explanations of basic safety awareness and maintenance. 
+                Finally we go through the key issues which may arise in a cleaning environment 
+                which will help a cleaner to understand the procedures in the event of abnormal occurrences.</p>
+                <br>
+            </br> 
+                <p>2. <span>Onsite training</span> - This occurs in all Broom of Africa cleaning contracts.  
+                   Their work is heavily supervised and act to ensure that a member of staff learns the 
+                   Broom of Africa method of work. This is a system where work is checked once it is carried 
+                   out to ensure all aspects of the cleaning specification are under taken. 
+                   It also help us to distinguish the members of staff who are prepared to take a pride in 
+                   the company and their work. Only members of staff who understand and act upon 
+                   what is expected of them continue with us.</p> 
+                   <br>
+                </br>
+                <p>3. <span>Specific site training</span> - This will include all aspects of specific site. 
+                   We recognise that every site is different and requires areas of particular attention. 
+                   The member of staff is also trained with regard to the health and safety implications of a 
+                   specific site as well as the security procedures of that particular site.</p>
+                   <br>
+                </br>
+                <p>4. <span>Ongoing training</span> - This keeps employees up to date with any changes in materials or cleaning 
+                   techniques used. All relevant changes will be introduced throughout the company and managers and 
+                   site supervisors then carry out training.</p> 
+            </p>
+        </div>
+    </div>
+</section>
+
+    <script>
+                /*================================= Toggle Icon navbar =================================*/
+        let menuIcon = document.querySelector('#menu-icon');
+        let navbar = document.querySelector('.navbar');
+
+        menuIcon.onclick = () => {
+            menuIcon.classList.toggle('bx-x');
+            navbar.classList.toggle('active');
+        };
+
+
+
+        /*================================= Scroll Section Active Link =================================*/
+        let sections = document.querySelectorAll('section');
+        let navLinks = document.querySelectorAll('header nav a');
+
+        window.onscroll = () => {
+            sections.forEach(sec => {
+                let top = window.scrollY;
+                let offset = sec.offsetTop - 150;
+                let height = sec.offsetHeight;
+                let id = sec.getAttribute('id');
+
+                if(top >= offset && top < offset + height) {
+                    navLinks.forEach(links => {
+                        links.classList.remove('active');
+                        document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+                    });
+                }
+            });
+
+            /*================================= Sticky Navbar =================================*/
+            let header = document.querySelector('header');
+
+            header.classList.toggle('sticky', window.scrollY > 100);
+
+            /*================================= Remove Toggle Icon and navbar When click navbar lick (scroll) =================================*/
+            menuIcon.classList.remove('bx-x');
+            navbar.classList.remove('active');
+        };
+
+        /*================================= Scroll Reveal =================================*/
+        scrollReveal({
+            reset: true,
+            distance: '80px',
+            duration: 2000,
+            delay: 200
+        });
+
+        scrollReveal().reveal('.home-content, .heading',{origin: 'top'});
+        scrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form',{origin: 
+        'bottom'});
+        scrollReveal().reveal('.home-content h1, .about-img',{origin: 'left'});
+        scrollReveal().reveal('.home-content p, .about-content',{origin: 'right'});
+
+        /*================================= Typed JS =================================*/
+        const typed = new Typed('.multiple-text', {
+            strings: ['Frontend Developer', 'Backend Developer', 'Network Installer', 'Music Producer'],
+            typeSpeed: 100,
+            backSpeed: 100,
+            backDelay: 1000,
+            loop: true
+        });
+
+    </script>
+    
+</body>
+</html>
